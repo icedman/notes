@@ -126,6 +126,16 @@ https://gitlab.com/jsherman82/notes/blob/master/arch.md
   start intel-undervolt.service
 
   https://aur.archlinux.org/packages/dell-bios-fan-control-git/
-
   https://aur.archlinux.org/packages/i8kutils/
-  /etc/modprobe.d/i8k.conf ->editor input-> options i8k force=1
+
+  viber .. requires `sudo pacman -S openssl-1.0`
+
+# more on touchpad
+
+  use gnome-tweaks to configure
+  and xorg conf.. http://wayland.freedesktop.org/libinput/doc/
+  https://jlk.fjfi.cvut.cz/arch/manpages/man/libinput.4
+  https://wiki.archlinux.org/index.php/Libinput
+
+  guide/smaple:
+  /usr/share/X11/xorg.conf.d/40-libinput.conf
