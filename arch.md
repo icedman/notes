@@ -77,7 +77,12 @@ https://gitlab.com/jsherman82/notes/blob/master/arch.md
   3. If ssd, add `discard` to `fstab`. Example:
      `UUID=<UUID> /           ext4        defaults,noatime,discard  0 2`
 
-
+###### swap
+ 
+  sudo pacman -S systemd-swap
+  /etc/systemd/swap.conf
+  zram_enabled=1
+  swapfc_enabled=1  
 
 ###### Pacman:
 
@@ -101,6 +106,12 @@ https://gitlab.com/jsherman82/notes/blob/master/arch.md
 
   https://www.archlinux.org/packages/community/x86_64/broadcom-wl-dkms/
   sudo pacman -S broadcom-wl-dkms
+  
+  bluetooth
+  sudo pacman -U bt-dw1560-firmware-1.0-1-any.pkg.tar.xz
+  sudo rfkill list
+  sudo rfkill unblock bluetooth
+  enable bluetooth.service 
 
 ###### usb tethering (internet)
 
@@ -139,3 +150,9 @@ https://gitlab.com/jsherman82/notes/blob/master/arch.md
 
   guide/smaple:
   /usr/share/X11/xorg.conf.d/40-libinput.conf
+
+# yay
+
+  git clone https://aur.archlinux.org/yay.git
+  cd yay
+  makepkg -si
