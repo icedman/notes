@@ -139,3 +139,17 @@ https://gitlab.com/jsherman82/notes/blob/master/arch.md
 
   guide/smaple:
   /usr/share/X11/xorg.conf.d/40-libinput.conf
+
+# hibernate
+
+Add kernel parameters:
+  resume=
+  resume_offset=
+  generate grub
+
+initramfs
+  add resume in HOOK = (..udev..resume)
+
+https://wiki.archlinux.org/index.php/Power_management/Suspend_and_hibernate#Hibernation_into_swap_file
+
+https://wiki.archlinux.org/index.php/Mkinitcpio#Image_creation_and_activation
