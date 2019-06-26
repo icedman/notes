@@ -151,5 +151,26 @@ initramfs
   add resume in HOOK = (..udev..resume)
 
 https://wiki.archlinux.org/index.php/Power_management/Suspend_and_hibernate#Hibernation_into_swap_file
-
 https://wiki.archlinux.org/index.php/Mkinitcpio#Image_creation_and_activation
+
+ sudo fallocate -l 4G /swapfile
+ sudo chmod 600 /swapfile
+ sudo mkswap /swapfile
+ sudo filefrag -v /swapfile
+ sudo vim /etc/default/grub 
+
+  ... resume=UUID=..root
+  ... resume_offset=..offset
+
+ sudo grub-mkconfig -o /boot/grub/grub.cfg
+
+ sudo vim /etc/mkinitcpio.conf
+ ... HOOKS=(base udev resume autodetect modconf block filesystems keyboard fsck)
+ ** add resume after udev 
+ 
+ sudo mkinitcpio -p linux 
+ ... rebuilds initrmfs 
+ ... also linux-lts
+ sudo reboot
+
+
