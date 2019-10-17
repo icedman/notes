@@ -94,7 +94,6 @@ https://gitlab.com/jsherman82/notes/blob/master/arch.md
     sudo pacman -U <generated package>
     ```
 
-
 ###### Desktop:
 
   1. install wayland weston xorg-server-xwayland
@@ -132,11 +131,11 @@ https://gitlab.com/jsherman82/notes/blob/master/arch.md
   https://aur.archlinux.org/packages/dell-bios-fan-control-git/
   https://aur.archlinux.org/packages/i8kutils/
 
-## on viber
+###### on viber
 
   viber .. requires `sudo pacman -S openssl-1.0`
 
-# more on touchpad
+###### more on touchpad
 
   use gnome-tweaks to configure
   and xorg conf.. http://wayland.freedesktop.org/libinput/doc/
@@ -146,7 +145,7 @@ https://gitlab.com/jsherman82/notes/blob/master/arch.md
   guide/smaple:
   ```sh /usr/share/X11/xorg.conf.d/40-libinput.conf```
 
-# hibernate
+###### hibernate
 
 Add kernel parameters:
   resume=
@@ -196,4 +195,25 @@ sudo mkinitcpio -p linux
 sudo reboot
 ```
 
+###### brightness
+
+```sh
+aurman -S brightnessctl
+```
+
+sudo usermod --append --groups video iceman
+
+
+```sh
+% cat /etc/udev/rules.d/backlight.rules
+ACTION=="add", SUBSYSTEM=="backlight", KERNEL=="intel_backlight", RUN+="/bin/chgrp video /sys/class/backlight/%k/brightness"
+ACTION=="add", SUBSYSTEM=="backlight", KERNEL=="intel_backlight", RUN+="/bin/chmod g+w /sys/class/backlight/%k/brightness"
+```
+
+Add keyboard shortcuts
+
+```sh
+brightnessctl s 20+
+birhgtnessctl s 20-
+```
 
