@@ -82,17 +82,21 @@ https://gitlab.com/jsherman82/notes/blob/master/arch.md
 ###### Pacman:
 
   1. Installing a package
+
     `sudo pacman -S <package name>`
 
   2. Installing a user-repository package
-    `git clone <http://package-report>`
-    `cd`
-    `makepkg`
-    `sudo pacman -U <generated package>`
+
+    ```sh
+    git clone <http://package-report>
+    cd
+    makepkg
+    sudo pacman -U <generated package>
+    ```
 
 
 ###### Desktop:
-  
+
   1. install wayland weston xorg-server-xwayland
   2. install gnome gnome-extras
   3. systemctl enable gdm
@@ -128,6 +132,8 @@ https://gitlab.com/jsherman82/notes/blob/master/arch.md
   https://aur.archlinux.org/packages/dell-bios-fan-control-git/
   https://aur.archlinux.org/packages/i8kutils/
 
+## on viber
+
   viber .. requires `sudo pacman -S openssl-1.0`
 
 # more on touchpad
@@ -138,7 +144,7 @@ https://gitlab.com/jsherman82/notes/blob/master/arch.md
   https://wiki.archlinux.org/index.php/Libinput
 
   guide/smaple:
-  /usr/share/X11/xorg.conf.d/40-libinput.conf
+  ```sh /usr/share/X11/xorg.conf.d/40-libinput.conf```
 
 # hibernate
 
@@ -153,24 +159,41 @@ initramfs
 https://wiki.archlinux.org/index.php/Power_management/Suspend_and_hibernate#Hibernation_into_swap_file
 https://wiki.archlinux.org/index.php/Mkinitcpio#Image_creation_and_activation
 
- sudo fallocate -l 4G /swapfile
- sudo chmod 600 /swapfile
- sudo mkswap /swapfile
- sudo filefrag -v /swapfile
- sudo vim /etc/default/grub 
+```sh
+sudo fallocate -l 4G /swapfile
+sudo chmod 600 /swapfile
+sudo mkswap /swapfile
+sudo filefrag -v /swapfile
+sudo findmnt -no SOURCE,UUID -T /swapfile
+sudo vim /etc/default/grub 
+```
+
+```sh
+GRUB_CMDLINE_LINUX_DEFAULT="resume=UUID=20562a02-cfa6-42e0-bb9f-5e936ea763d0 resume_offset=34818 quiet splash"
+```
 
   ... resume=UUID=..root
   ... resume_offset=..offset
 
- sudo grub-mkconfig -o /boot/grub/grub.cfg
+```
+sudo grub-mkconfig -o /boot/grub/grub.cfg```
 
- sudo vim /etc/mkinitcpio.conf
- ... HOOKS=(base udev resume autodetect modconf block filesystems keyboard fsck)
+​```sh
+sudo vim /etc/mkinitcpio.conf
+```
+
+... HOOKS=(base udev resume autodetect modconf block filesystems keyboard fsck)
  ** add resume after udev 
- 
- sudo mkinitcpio -p linux 
+
+```sh
+sudo mkinitcpio -p linux
+```
+
  ... rebuilds initrmfs 
  ... also linux-lts
- sudo reboot
+
+```sh
+sudo reboot
+```
 
 
