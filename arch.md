@@ -114,6 +114,18 @@ https://gitlab.com/jsherman82/notes/blob/master/arch.md
 
   install libinput
 
+3-finger-drag
+
+  libinput-gestures (3-finger-fork)
+
+https://github.com/daveriedstra/libinput-gestures/tree/three-finger-drag
+
+```sh
+gesture swipebegin all 3 xdotool mousedown 1
+gesture swipeend all 3 xdotool mouseup 1
+gesture swipeupdate all 3 xdotool mousemove_relative -- x y
+```
+
 ###### theme
 
   1. theme: arc
