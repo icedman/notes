@@ -126,6 +126,10 @@ gesture swipeend all 3 xdotool mouseup 1
 gesture swipeupdate all 3 xdotool mousemove_relative -- x y
 ```
 
+or
+
+https://extensions.gnome.org/extension/2164/three-finger-window-move/
+
 ###### theme
 
   1. theme: arc
