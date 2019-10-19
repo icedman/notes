@@ -76,8 +76,9 @@ https://gitlab.com/jsherman82/notes/blob/master/arch.md
      `tmpfs   /tmp         tmpfs   nodev,nosuid,size=2G          0  0`
   3. If ssd, add `discard` to `fstab`. Example:
      `UUID=<UUID> /           ext4        defaults,noatime,discard  0 2`
-
-
+  4. use fstrim.timer service instead of #3
+  		`util-linux`
+  		`enable fstrim.timer`
 
 ###### Pacman:
 
