@@ -80,6 +80,15 @@ https://gitlab.com/jsherman82/notes/blob/master/arch.md
   		`util-linux`
   		`enable fstrim.timer`
 
+###### swap
+
+  sudo pacman -S systemd-swap
+  /etc/systemd/swap.conf
+  zram_enabled=1
+  swapfc_enabled=1  
+
+  .. use swapfile instead
+
 ###### Pacman:
 
   1. Installing a package
@@ -105,6 +114,12 @@ https://gitlab.com/jsherman82/notes/blob/master/arch.md
 
   https://www.archlinux.org/packages/community/x86_64/broadcom-wl-dkms/
   sudo pacman -S broadcom-wl-dkms
+
+  bluetooth
+  sudo pacman -U bt-dw1560-firmware-1.0-1-any.pkg.tar.xz
+  sudo rfkill list
+  sudo rfkill unblock bluetooth
+  enable bluetooth.service 
 
 ###### usb tethering (internet)
 
@@ -160,8 +175,16 @@ https://extensions.gnome.org/extension/2164/three-finger-window-move/
   https://wiki.archlinux.org/index.php/Libinput
 
   guide/smaple:
+  /usr/share/X11/xorg.conf.d/40-libinput.conf
+
   ```sh /usr/share/X11/xorg.conf.d/40-libinput.conf```
 
+###### yay
+
+  git clone https://aur.archlinux.org/yay.git
+  cd yay
+  makepkg -si
+  
 ###### hibernate
 
 Add kernel parameters:
@@ -233,4 +256,3 @@ Add keyboard shortcuts
 brightnessctl s 20+
 birhgtnessctl s 20-
 ```
-
