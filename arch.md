@@ -78,7 +78,7 @@ https://gitlab.com/jsherman82/notes/blob/master/arch.md
      `UUID=<UUID> /           ext4        defaults,noatime,discard  0 2`
 
 ###### swap
- 
+
   sudo pacman -S systemd-swap
   /etc/systemd/swap.conf
   zram_enabled=1
@@ -109,7 +109,7 @@ https://gitlab.com/jsherman82/notes/blob/master/arch.md
 
   https://www.archlinux.org/packages/community/x86_64/broadcom-wl-dkms/
   sudo pacman -S broadcom-wl-dkms
-  
+
   bluetooth
   sudo pacman -U bt-dw1560-firmware-1.0-1-any.pkg.tar.xz
   sudo rfkill list
@@ -170,17 +170,16 @@ https://extensions.gnome.org/extension/2164/three-finger-window-move/
   https://wiki.archlinux.org/index.php/Libinput
 
   guide/smaple:
-<<<<<<< HEAD
   /usr/share/X11/xorg.conf.d/40-libinput.conf
 
-# yay
+  ```sh /usr/share/X11/xorg.conf.d/40-libinput.conf```
+
+###### yay
 
   git clone https://aur.archlinux.org/yay.git
   cd yay
   makepkg -si
-=======
-  ```sh /usr/share/X11/xorg.conf.d/40-libinput.conf```
-
+  
 ###### hibernate
 
 Add kernel parameters:
@@ -252,5 +251,3 @@ Add keyboard shortcuts
 brightnessctl s 20+
 birhgtnessctl s 20-
 ```
-
->>>>>>> 1ba17048fb8f5065d35dac634a994047ae50ae67
