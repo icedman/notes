@@ -87,17 +87,20 @@ https://gitlab.com/jsherman82/notes/blob/master/arch.md
 ###### Pacman:
 
   1. Installing a package
+
     `sudo pacman -S <package name>`
 
   2. Installing a user-repository package
-    `git clone <http://package-report>`
-    `cd`
-    `makepkg`
-    `sudo pacman -U <generated package>`
 
+    ```sh
+    git clone <http://package-report>
+    cd
+    makepkg
+    sudo pacman -U <generated package>
+    ```
 
 ###### Desktop:
-  
+
   1. install wayland weston xorg-server-xwayland
   2. install gnome gnome-extras
   3. systemctl enable gdm
@@ -122,6 +125,22 @@ https://gitlab.com/jsherman82/notes/blob/master/arch.md
 
   install libinput
 
+3-finger-drag
+
+  libinput-gestures (3-finger-fork)
+
+https://github.com/daveriedstra/libinput-gestures/tree/three-finger-drag
+
+```sh
+gesture swipebegin all 3 xdotool mousedown 1
+gesture swipeend all 3 xdotool mouseup 1
+gesture swipeupdate all 3 xdotool mousemove_relative -- x y
+```
+
+or
+
+https://extensions.gnome.org/extension/2164/three-finger-window-move/
+
 ###### theme
 
   1. theme: arc
@@ -139,9 +158,11 @@ https://gitlab.com/jsherman82/notes/blob/master/arch.md
   https://aur.archlinux.org/packages/dell-bios-fan-control-git/
   https://aur.archlinux.org/packages/i8kutils/
 
+###### on viber
+
   viber .. requires `sudo pacman -S openssl-1.0`
 
-# more on touchpad
+###### more on touchpad
 
   use gnome-tweaks to configure
   and xorg conf.. http://wayland.freedesktop.org/libinput/doc/
@@ -149,6 +170,7 @@ https://gitlab.com/jsherman82/notes/blob/master/arch.md
   https://wiki.archlinux.org/index.php/Libinput
 
   guide/smaple:
+<<<<<<< HEAD
   /usr/share/X11/xorg.conf.d/40-libinput.conf
 
 # yay
@@ -156,3 +178,79 @@ https://gitlab.com/jsherman82/notes/blob/master/arch.md
   git clone https://aur.archlinux.org/yay.git
   cd yay
   makepkg -si
+=======
+  ```sh /usr/share/X11/xorg.conf.d/40-libinput.conf```
+
+###### hibernate
+
+Add kernel parameters:
+  resume=
+  resume_offset=
+  generate grub
+
+initramfs
+  add resume in HOOK = (..udev..resume)
+
+https://wiki.archlinux.org/index.php/Power_management/Suspend_and_hibernate#Hibernation_into_swap_file
+https://wiki.archlinux.org/index.php/Mkinitcpio#Image_creation_and_activation
+
+```sh
+sudo fallocate -l 4G /swapfile
+sudo chmod 600 /swapfile
+sudo mkswap /swapfile
+sudo filefrag -v /swapfile
+sudo findmnt -no SOURCE,UUID -T /swapfile
+sudo vim /etc/default/grub 
+```
+
+```sh
+GRUB_CMDLINE_LINUX_DEFAULT="resume=UUID=20562a02-cfa6-42e0-bb9f-5e936ea763d0 resume_offset=34818 quiet splash"
+```
+
+  ... resume=UUID=..root
+  ... resume_offset=..offset
+
+```
+sudo grub-mkconfig -o /boot/grub/grub.cfg```
+
+​```sh
+sudo vim /etc/mkinitcpio.conf
+```
+
+... HOOKS=(base udev resume autodetect modconf block filesystems keyboard fsck)
+ ** add resume after udev 
+
+```sh
+sudo mkinitcpio -p linux
+```
+
+ ... rebuilds initrmfs 
+ ... also linux-lts
+
+```sh
+sudo reboot
+```
+
+###### brightness
+
+```sh
+aurman -S brightnessctl
+```
+
+sudo usermod --append --groups video iceman
+
+
+```sh
+% cat /etc/udev/rules.d/backlight.rules
+ACTION=="add", SUBSYSTEM=="backlight", KERNEL=="intel_backlight", RUN+="/bin/chgrp video /sys/class/backlight/%k/brightness"
+ACTION=="add", SUBSYSTEM=="backlight", KERNEL=="intel_backlight", RUN+="/bin/chmod g+w /sys/class/backlight/%k/brightness"
+```
+
+Add keyboard shortcuts
+
+```sh
+brightnessctl s 20+
+birhgtnessctl s 20-
+```
+
+>>>>>>> 1ba17048fb8f5065d35dac634a994047ae50ae67
