@@ -79,6 +79,7 @@ https://gitlab.com/jsherman82/notes/blob/master/arch.md
   3. If ssd, add `discard` to `fstab`. Example:
      `UUID=<UUID> /           ext4        defaults,noatime,discard  0 2`
   4. use fstrim.timer service instead of #3
+
     		`util-linux`
     		`enable fstrim.timer`
 
@@ -112,6 +113,11 @@ https://gitlab.com/jsherman82/notes/blob/master/arch.md
   2. install gnome gnome-extras
   3. systemctl enable gdm
 
+
+###### intel 9260
+
+	linux-firmware
+	
 ###### DW1560 wifi
 
   https://www.archlinux.org/packages/community/x86_64/broadcom-wl-dkms/
