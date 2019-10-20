@@ -65,7 +65,9 @@ https://gitlab.com/jsherman82/notes/blob/master/arch.md
         * `# chmod 600 /swapfile`
         * `# mkswap /swapfile`
         * `# echo '/swapfile none swap sw 0 0' | tee -a /etc/fstab`
-  29. `$ exit`
+  
+  30. iputils, dhcpcd
+  31. `$ exit`
   30. `# umount -a`
   31. `# reboot`
 
@@ -77,8 +79,8 @@ https://gitlab.com/jsherman82/notes/blob/master/arch.md
   3. If ssd, add `discard` to `fstab`. Example:
      `UUID=<UUID> /           ext4        defaults,noatime,discard  0 2`
   4. use fstrim.timer service instead of #3
-  		`util-linux`
-  		`enable fstrim.timer`
+    		`util-linux`
+    		`enable fstrim.timer`
 
 ###### swap
 
@@ -184,7 +186,7 @@ https://extensions.gnome.org/extension/2164/three-finger-window-move/
   git clone https://aur.archlinux.org/yay.git
   cd yay
   makepkg -si
-  
+
 ###### hibernate
 
 Add kernel parameters:
