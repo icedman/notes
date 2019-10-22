@@ -171,7 +171,16 @@ https://extensions.gnome.org/extension/2164/three-finger-window-move/
   https://aur.archlinux.org/packages/dell-bios-fan-control-git/
   https://aur.archlinux.org/packages/i8kutils/
 
-	additional requirements: sacpi tcl
+	additional requirements: acpi tcl
+
+   ```sh
+   echo 'i8k' >> /etc/modules-load.d/i8k.conf
+   vim /etc/i8kutils/i8kmon.conf
+   ```
+   
+   ```sh
+   set config(auto) 1
+   ```
 
 ###### on viber
 
