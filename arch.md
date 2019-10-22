@@ -117,7 +117,7 @@ https://gitlab.com/jsherman82/notes/blob/master/arch.md
 ###### intel 9260
 
 	linux-firmware
-	
+
 ###### DW1560 wifi
 
   https://www.archlinux.org/packages/community/x86_64/broadcom-wl-dkms/
@@ -170,6 +170,8 @@ https://extensions.gnome.org/extension/2164/three-finger-window-move/
 
   https://aur.archlinux.org/packages/dell-bios-fan-control-git/
   https://aur.archlinux.org/packages/i8kutils/
+
+	additional requirements: sacpi tcl
 
 ###### on viber
 
