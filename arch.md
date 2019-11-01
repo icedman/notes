@@ -177,7 +177,7 @@ https://extensions.gnome.org/extension/2164/three-finger-window-move/
    echo 'i8k' >> /etc/modules-load.d/i8k.conf
    vim /etc/i8kutils/i8kmon.conf
    ```
-   
+
    ```sh
    set config(auto) 1
    ```
@@ -275,3 +275,13 @@ Add keyboard shortcuts
 brightnessctl s 20+
 birhgtnessctl s 20-
 ```
+
+#### console fonts
+
+sudo mkdir /usr/share/fonts/PSF
+gunzip ter-powerline-v16b.psf.gz 
+sudo mv ter-powerline-v16b.psf /usr/share/fonts/PSF
+sudo vim /etc/vconsole.conf
+FONT=/usr/share/fonts/PSF/ter-powerline-v16b.psf
+
+
