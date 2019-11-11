@@ -107,6 +107,12 @@ https://gitlab.com/jsherman82/notes/blob/master/arch.md
     sudo pacman -U <generated package>
     ```
 
+use multicore
+/etc/makepkg.conf
+```sh
+  COMPRESSXZ=(xz -T 0 -c -z -)
+```
+
 ###### Desktop:
 
   1. install wayland weston xorg-server-xwayland
