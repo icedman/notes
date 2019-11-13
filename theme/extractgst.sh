@@ -14,4 +14,5 @@ for r in `gresource list $gst`; do
 done
 
 cat custom.css >> ./theme/gnome-shell.css
+cp ./*.xml ./theme
 cp install.sh ./theme/
