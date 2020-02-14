@@ -291,3 +291,66 @@ sudo vim /etc/vconsole.conf
 FONT=/usr/share/fonts/PSF/ter-powerline-v16b.psf
 
 
+#### power saving
+
+```sh
+sudo pacman -S powertop
+sudo powertop --calibrate
+```
+
+sudo $EDITOR /etc/systemd/system/powertop.service
+
+```sh
+[Unit]
+Description=Powertop tunings
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/powertop --auto-tune
+
+[Install]
+WantedBy=multi-user.target
+```
+
+```sh
+sudo systemctl enable powertop```
+
+Reboot and launch powertop : you see VM writeback is still on "bad", all others are on "good"
+
+Install TLP :
+
+sudo pacman -S tlp
+TLP make the nearly the same than powertop, so i delete all things ever managed by powertop
+
+```sh
+/etc/default/tlp
+
+# ------------------------------------------------------------------------------
+# tlp - Parameters for power save
+
+# Hint: some features are disabled by default, remove the leading # to enable
+# them.
+
+# Set to 0 to disable, 1 to enable TLP.
+TLP_ENABLE=1
+
+# Dirty page values (timeouts in secs).
+MAX_LOST_WORK_SECS_ON_BAT=15
+
+# Battery charge thresholds (ThinkPad only, tp-smapi or acpi-call kernel module
+# required). Charging starts when the remaining capacity falls below the
+# START_CHARGE_TRESH value and stops when exceeding the STOP_CHARGE_TRESH value.
+# Main / Internal battery (values in %)
+START_CHARGE_THRESH_BAT0=75
+STOP_CHARGE_THRESH_BAT0=90
+# Ultrabay / Slice / Replaceable battery (values in %)
+START_CHARGE_THRESH_BAT1=75
+STOP_CHARGE_THRESH_BAT1=90
+```
+
+Change MAX_LOST_WORK_SECS_ON_BAT at 15 (powertop said for VM writeback) than 60. 60 make no effect.
+
+```sh
+systemctl enable tlp.service  
+systemctl enable tlp-sleep.service
+```
