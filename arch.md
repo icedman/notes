@@ -293,6 +293,13 @@ FONT=/usr/share/fonts/PSF/ter-powerline-v16b.psf
 
 #### power saving
 
+handle lid switch suspend
+
+```sh
+/etc/systemd/logind.conf
+```
+
+
 ```sh
 sudo pacman -S powertop
 sudo powertop --calibrate
