@@ -5,14 +5,25 @@ setup python virtual environment
 virtualenv --python=/usr/bin/pythonxx venv
 source venve/bin/activate
 pip install tensorflow==1.5
-pip ...
+pip ...etc
 deactivate
+```
+
+```sh
+git clone https://github.com/tensorflow/models
+git checkout r1.5
 ```
 
 compile proto buffers
 
 ```sh
 protoc --python_out=. ./object_detection/protos/*.proto
+```
+
+```sh
+export PYTHONPATH=/tensorflow1\models;/tensorflow1\models\research;/tensorflow1/models/research/slim
+python setup.py build
+python setup.py install
 ```
 
 generate tf records
