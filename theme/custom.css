@@ -18,6 +18,12 @@
   border-color: rgba(45, 44, 46, 0.5);
   color: #eeeeec; }
 
+
+.login-dialog StEntry:focus {
+  border-width: 0px !important;
+  border: 0px !important;
+}
+
 .login-dialog-message-warning {
   color: white;
   text-shadow: 0px 0px 6px rgba(0, 0, 0, 0.726); }
