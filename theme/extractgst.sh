@@ -1,4 +1,7 @@
 #!/bin/sh
+
+set +x
+
 gst=/usr/share/gnome-shell/gnome-shell-theme.gresource
 workdir=./
 
@@ -20,4 +23,4 @@ sed '/custom/,$d' ./theme/gnome-shell.css > ./gnome-shell.css.orig
 cp ./gnome-shell.css.orig ./theme/gnome-shell.css
 cat custom.css >> ./theme/gnome-shell.css
 
-cp install.sh ./theme/
+# cp install.sh ./theme/
