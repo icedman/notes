@@ -13,6 +13,11 @@ for r in `gresource list $gst`; do
         gresource extract $gst $r >$workdir/${r#\/org\/gnome\/shell/}
 done
 
+sh generate.xml.sh > ./theme/gnome-shell-theme.gresource.xml
+
+sed '/custom/,$d' ./theme/gnome-shell.css > ./gnome-shell.css.orig
+
+cp ./gnome-shell.css.orig ./theme/gnome-shell.css
 cat custom.css >> ./theme/gnome-shell.css
-cp ./*.xml ./theme
+
 cp install.sh ./theme/
