@@ -1,3 +1,15 @@
+
+/boot/armbianEnv.txt
+
+console=custom-both
+consoleargs=console=ttyS0,115200 console=ttyS1 console=ttyGS0
+
+/lib/systemd/system/getty.target.wants/getty-static.service 
+
+ExecStart=/bin/systemctl --no-block start getty@ttyGS0 getty@tty2.service getty@tty3.service getty@tty4.service getty@tty5.service getty@tty6.service
+
+
+
 All credit goes to balbes150 over on freaktab for this epic port of Armbian Ubuntu/Debian desktop for S905,S905X,S912 Amlogic TV box's.
 
 The system runs significantly faster than the S805 port we did a install guide for, a few days ago.
