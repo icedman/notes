@@ -36,8 +36,17 @@ git clone ...flutter
 flutter doctor
 ```
 
-
 * android-ndk-r20-linux-x86_64.zip
 * jdk-8u181-linux-x64.tar.gz
 * platform-tools_r29.0.4-linux.zip
 * sdk-tools-linux-4333796.zip
+
+
+```sh
+sudo groupadd plugdev
+sudo usermod -aG plugdev <user>
+sudo vi /etc/udev/rules.d/51-android.rules
+SUBSYSTEM=="usb", ATTR{idVendor}=="22b8", ATTR{idProduct}=="2e81", MODE="0666", GROUP="plugdev"
+sudo udevadm control --reload-rules
+```
+

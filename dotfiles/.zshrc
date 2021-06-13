@@ -140,5 +140,5 @@ export CHROME_EXECUTABLE=/usr/bin/google-chrome-stable
 # Misc
 ###########################
 
+export PATH=/usr/local/bin:$PATH
 alias open=xdg-open
-

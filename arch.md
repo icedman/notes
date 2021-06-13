@@ -119,10 +119,17 @@ use multicore
   2. install gnome gnome-extras
   3. systemctl enable gdm
 
+###### wifi
+  
+  NetworkManager
 
-###### intel 9260
+###### intel (9260,9560)
 
 	linux-firmware
+
+###### BlueTooth
+
+  bluez, bluez-utils, blueman
 
 ###### DW1560 wifi
 
@@ -209,6 +216,18 @@ https://extensions.gnome.org/extension/2164/three-finger-window-move/
   git clone https://aur.archlinux.org/yay.git
   cd yay
   makepkg -si
+
+##### braille fonts for gotop
+
+  FreeMono (gnu-free) is installed with Firefox,Zoom. The font has messed up braille fonts. Reject the font.
+
+```xml
+<selectfont>
+    <rejectfont>
+        <glob>/usr/share/fonts/gnu-free/FreeMono.otf</glob>
+    </rejectfont>
+</selectfont>
+```
 
 ###### hibernate
 
