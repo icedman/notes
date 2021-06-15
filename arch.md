@@ -240,12 +240,16 @@ initramfs
   add resume in HOOK = (..udev..resume)
 
 https://wiki.archlinux.org/index.php/Power_management/Suspend_and_hibernate#Hibernation_into_swap_file
+
 https://wiki.archlinux.org/index.php/Mkinitcpio#Image_creation_and_activation
 
 ```sh
 sudo fallocate -l 4G /swapfile
 sudo chmod 600 /swapfile
 sudo mkswap /swapfile
+```
+
+```sh
 sudo filefrag -v /swapfile
 sudo findmnt -no SOURCE,UUID -T /swapfile
 sudo vim /etc/default/grub 
@@ -253,15 +257,15 @@ sudo vim /etc/default/grub
 
 ```sh
 GRUB_CMDLINE_LINUX_DEFAULT="resume=UUID=20562a02-cfa6-42e0-bb9f-5e936ea763d0 resume_offset=34818 quiet splash"
-```
-
   ... resume=UUID=..root
   ... resume_offset=..offset
-
 ```
-sudo grub-mkconfig -o /boot/grub/grub.cfg```
 
-​```sh
+```sh
+sudo grub-mkconfig -o /boot/grub/grub.cfg```
+```
+
+```sh
 sudo vim /etc/mkinitcpio.conf
 ```
 
