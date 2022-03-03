@@ -1,3 +1,4 @@
+armbian test
 
 /boot/armbianEnv.txt
 
