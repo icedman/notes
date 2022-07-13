@@ -10,4 +10,5 @@ pacman -S mysql
 
 sudo mysql_install_db --user=mysql --basedir=/usr --datadir=/var/lib/mysql
 
+https://wiki.gnome.org/Attic/GnomeShell/Extensions/Writing
 journalctl -f -o cat /usr/bin/gnome-shell
