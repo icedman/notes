@@ -9,3 +9,5 @@ pacman -S mysql
 (choose mariadb)
 
 sudo mysql_install_db --user=mysql --basedir=/usr --datadir=/var/lib/mysql
+
+journalctl -f -o cat /usr/bin/gnome-shell
