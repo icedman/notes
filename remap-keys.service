@@ -1,0 +1,6 @@
+[Unit]
+Description=Remap up and right keys from r-alt and r-ctrl
+[Service]
+ExecStart=/usr/local/sbin/remap.sh
+[Install]
+WantedBy=multi-user.target
