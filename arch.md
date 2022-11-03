@@ -167,6 +167,13 @@ or
 
 https://extensions.gnome.org/extension/2164/three-finger-window-move/
 
+###### tap-to-click at gdm greeter
+
+```sh
+sudo -u gdm dbus-launch gsettings set org.gnome.desktop.peripherals.touchpad tap-to-click 'true'
+```
+@GDM - ArcgWiki
+
 ###### theme
 
   1. theme: arc

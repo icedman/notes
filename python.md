@@ -23,7 +23,8 @@ eval "$(pyenv virtualenv-init -)"
 for globally installed tools
 
 ```sh
-pip global 3.10.5
+pyenv install 3.10.5
+pyenv global 3.10.5
 pip install pipx
 pipx ensurepath
 ```
