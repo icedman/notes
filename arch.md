@@ -148,6 +148,15 @@ pacman -Sy archlinux-keyring && pacman -Su
   sudo rfkill unblock bluetooth
   enable bluetooth.service 
 
+
+###### audio
+
+  /etc/modprobe.d/alsa-base.conf 
+  ```sh
+  options snd_soc_sof_es8336 quirk=0x02
+  options snd-hda-intel dmic_detect=0
+  ```
+  
 ###### usb tethering (internet)
 
   ls /sys/class/net
