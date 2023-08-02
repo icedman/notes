@@ -2,6 +2,11 @@
 
 screen recording with pipewire
 
+requires:
+qt6
+pipewire
+xdg-desktop-portal
+
 # shotcut
 
 video editing
