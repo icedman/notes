@@ -20,7 +20,7 @@ require('packer').startup(function()
   use {'nvim-tree/nvim-web-devicons'}
   use {'akinsho/bufferline.nvim'}
   use {'hoob3rt/lualine.nvim'}
-
+  use {'numToStr/Comment.nvim'}
   use {'akinsho/toggleterm.nvim'}
 
   use {

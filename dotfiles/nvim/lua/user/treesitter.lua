@@ -8,6 +8,9 @@ configs.setup({
     enable = true, -- false will disable the whole extension
     disable = {"css"} -- list of language that will be disabled
   },
+	folding = {
+		enable = true
+	},
   autopairs = {enable = false},
   incremental_selection = {
     enable = true,

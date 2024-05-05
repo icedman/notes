@@ -9,6 +9,7 @@ require 'user.nvim-tree'
 require 'user.bufferline'
 require 'user.lualine'
 require 'user.cmp'
+require 'user.comment'
 
 require 'user.toggleterm'
 require 'user.telescope'
