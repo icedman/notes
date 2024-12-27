@@ -1,0 +1,48 @@
+{
+  "favorite-apps": [
+    "kitty.desktop",
+    "org.gnome.Nautilus.desktop",
+    "google-chrome.desktop",
+    "org.mozilla.firefox.desktop",
+    "com.spotify.Client.desktop",
+    "org.gnome.Calendar.desktop",
+    "org.gnome.clocks.desktop",
+    "org.gnome.Software.desktop",
+    "org.gnome.TextEditor.desktop"
+  ],
+  "-dock-items-lead": ["cpu-stats", "memory-stats"],
+  "panel-items-lead": [{
+    "id": "logo",
+    "showOSName": false,
+    "showShortOSName": true,
+    "hideIcon": false
+  }],
+  "panel-items": [{
+    "id": "clock",
+    "widget": "clock",
+    "format": "%Y-%m-%d %H:%M %p "
+  }],
+  "panel-items-trail": [
+    "search",
+    "inhibitor",
+    {
+      "id": "brightness",
+      "format": "%P%"
+    },
+    "network", 
+    {
+      "id": "power",
+      "format": "%P%",
+      "formatAlt": "%P%", 
+      "formatAltToEmpty": "%P% %H:%M battery remaining",
+      "formatAltToFull": "%P% %H:%M left charging time"
+    },
+    {
+      "id": "volume",
+      "format": "%P%"
+    }, "mic",
+    "disk-stats",
+    "cpu-stats",
+    "memory-stats"
+  ]
+}
