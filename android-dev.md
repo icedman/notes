@@ -61,3 +61,27 @@ SUBSYSTEM=="usb", ATTR{idVendor}=="04e8", MODE="0666", GROUP="plugdev"
 # Xiaomi
 SUBSYSTEM=="usb", ATTR{idVendor}=="2717", MODE="0666", GROUP="plugdev"
 
+
+
+
+export ANDROID_HOME=$USER_HOME/Developer/Android
+export ANDROID_SDK_ROOT=$ANDROID_HOME
+export NDK_ROOT=$ANDROID_HOME/ndk/21.3.6528147
+export PATH=$NDK_ROOT:$PATH
+export PATH=$ANDROID_HOME:$PATH
+export PATH=$ANDROID_HOME/emulator:$PATH
+export PATH=$ANDROID_HOME/tools/:$PATH
+export PATH=$ANDROID_HOME/tools/bin:$PATH
+export PATH=$ANDROID_HOME/platform-tools:$PATH
+export PATH=$ANDROID_HOME/cmdline-tools/latest/:$PATH
+export PATH=$ANDROID_HOME/cmdline-tools/latest/bin:$PATH
+#export PATH=$ANDROID_HOME/build-tools/21.1.2:$PATH
+export PATH=$ANDROID_HOME/build-tools/28.0.3:$PATH
+
+# export JAVA_HOME=$ANDROID_HOME/jdk1.8.0_181
+export JAVA_HOME=$ANDROID_HOME/jdk-19.0.1
+# export JAVA_HOME=$ANDROID_HOME/jdk-17.0.10+7-jre
+# export JAVA_HOME=$ANDROID_HOME/jdk-11.0.2
+export JDK_HOME=$JAVA_HOME
+export PATH=$JAVA_HOME/bin:$PATH
+
