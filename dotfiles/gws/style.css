@@ -1,0 +1,58 @@
+#_Dock {
+	border: 2px solid red;
+}
+#_Dock #container {
+	border: 2px solid red;
+}
+
+#Dock button image {
+/*	filter: sepia(50%);*/
+/*  filter: grayscale(90%); */
+/*	filter: contrast(120%);*/
+/*	transform: scale(1.5);*/
+}
+
+#Search {
+/*	filter: blur(2px);*/
+/*	filter: sepia(50%);*/
+/*	filter: grayscale(90%);*/
+/*	filter: contrast(120%);*/
+}
+
+/*
+#Apps-Grid {
+	border: 2px solid magenta;
+	background: transparent;
+}
+#Apps-Grid * {
+	background: transparent;
+}*/
+
+/*
+#Dock #container {
+	transition: transform 0.2s ease-in-out;
+	transform: translateY(65px);
+}
+#Dock:hover #container {
+	transform: translateY(0px);
+}
+*/
+
+/*#Dock #container {
+	border-left: 0px;
+	border-right: 0px;
+	border-bottom: 0px;
+}*/
+
+#Panel #container {
+	border-top: 0px;
+	border-left: 0px;
+	border-right: 0px;
+}
+
+.panel-item * {
+/*	color: red;*/
+}
+
+/*#Dock #container #lead.animate-adjust-left-1 { margin-left: 204.783999999999999px; }*/
+/*#Dock #container #center.animate-adjust-left-1 { margin-left: 14.783999999999999px; }*/
