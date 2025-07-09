@@ -17,5 +17,3 @@ require 'user.treesitter'
 
 vim.cmd('colorscheme tokyonight')
 vim.defer_fn(function() vim.cmd('colorscheme tokyonight') end, 100)
-
-
