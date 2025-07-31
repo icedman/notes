@@ -1,0 +1,37 @@
+" syn off
+" luafile ~/.vim/lua/vim-treesitter/vim-treesitter.lua
+
+call plug#begin()
+
+Plug 'ghifarit53/tokyonight-vim'
+Plug 'preservim/nerdtree'
+" Plug 'itchyny/lightline.vim'
+
+call plug#end()
+
+" colorschem
+set termguicolors
+set number
+
+let g:tokyonight_style = 'night' " available: night, storm
+let g:tokyonight_enable_italic = 1
+
+colorscheme tokyonight
+
+" lightline
+set laststatus=2
+
+" keybindings
+" Smart window navigation with Ctrl + direction key
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
+nnoremap <C-Up>    :resize -2<CR>
+nnoremap <C-Down>  :resize +2<CR>
+nnoremap <C-Left>  :vertical resize -2<CR>
+nnoremap <C-Right> :vertical resize +2<CR>
+
+" nerdtree
+nnoremap <C-n> :NERDTreeToggle<CR>
