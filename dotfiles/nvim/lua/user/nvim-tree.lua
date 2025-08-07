@@ -7,3 +7,6 @@ nvim_tree.setup({
   renderer = {group_empty = true},
   filters = {dotfiles = true}
 })
+
+vim.api.nvim_set_keymap('n', '<C-n>', ':NvimTreeToggle<CR>',
+                        {noremap = true, silent = true})
