@@ -14,9 +14,13 @@ require 'user.comment'
 require 'user.toggleterm'
 require 'user.telescope'
 require 'user.treesitter'
+require 'nvim-textmate'
 
 vim.o.foldmethod = 'manual'
 vim.o.foldlevel = 99
 
 vim.cmd('colorscheme tokyonight')
 vim.defer_fn(function() vim.cmd('colorscheme tokyonight') end, 100)
+
+require("scrollbar").setup({
+})
