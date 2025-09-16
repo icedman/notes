@@ -7,6 +7,7 @@ require 'user.keymaps'
 require 'user.plugins'
 require 'user.nvim-tree'
 require 'user.bufferline'
+require 'user.dressing'
 require 'user.lualine'
 require 'user.cmp'
 require 'user.comment'
@@ -22,5 +23,4 @@ vim.o.foldlevel = 99
 vim.cmd('colorscheme tokyonight')
 vim.defer_fn(function() vim.cmd('colorscheme tokyonight') end, 100)
 
-require("scrollbar").setup({
-})
+require("scrollbar").setup({})
