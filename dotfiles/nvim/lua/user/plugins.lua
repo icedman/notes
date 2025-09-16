@@ -22,7 +22,8 @@ require('packer').startup(function()
   use {'hoob3rt/lualine.nvim'}
   use {'numToStr/Comment.nvim'}
   use {'akinsho/toggleterm.nvim'}
-  use("petertriho/nvim-scrollbar")
+  use {"petertriho/nvim-scrollbar"}
+  use {"stevearc/dressing.nvim"}
   
 	use {
     'hrsh7th/nvim-cmp',
