@@ -19,6 +19,7 @@ Plug 'preservim/nerdcommenter'
 "Plug 'prabirshrestha/asyncomplete.vim'
 "Plug 'prabirshrestha/asyncomplete-lsp.vim'
 "Plug 'mattn/vim-lsp-settings'
+"Plug 'icedman/vim-textmate'
 
 call plug#end()
 
@@ -80,7 +81,6 @@ nnoremap <C-n> :NERDTreeToggle<CR>
 nnoremap <leader>f :Files<CR>
 
 " Save and quit
-nnoremap <C-s> :write<CR>
 nmap <leader>w :w!<cr>
 nmap <leader>q :q<cr>
 
@@ -100,6 +100,7 @@ nnoremap <leader>sh :nohlsearch<Bar>:echo<CR>
 " ========================
 " syn off
 " luafile ~/.vim/lua/vim-treesitter/vim-treesitter.lua
+" luafile ~/.vim/lua/vim-textmate/vim-textmate.lua
 
 "set nobackup
 "set nowritebackup
